@@ -48,7 +48,7 @@ def run_on_dump(args, input, output):
 
 def run_dumps(args):
     # identify targets in directory
-    targets = [f for f in listdir(args.input) if f.endswith(".osm.pbf")]
+    targets = [f for f in listdir(args.input) if f.endswith(".osm.pbf") or f.endswith(".osm")]
 
     if not os.path.isdir(args.output):
         makedirs(args.output)
