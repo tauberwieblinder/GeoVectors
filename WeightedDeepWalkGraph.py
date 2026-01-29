@@ -1,10 +1,9 @@
 from csrgraph.graph import csrgraph
-from csrgraph.methods import _update_src_array
 from csrgraph.random_walks import _random_walk
 import numpy as np
 
 import numba
-from numba import jit, jitclass
+from numba import jit
 from scipy import sparse
 
 
@@ -156,7 +155,7 @@ def _edgelist_to_wdw_graph(elist, nnodes, nodenames=None):
         .count()
         .reset_index(drop=False)
     )
-    _update_src_array(src, grp.src.to_numpy(), grp.cnt.to_numpy())
+    # _update_src_array(src, grp.src.to_numpy(), grp.cnt.to_numpy())
     elist.drop(columns=['cnt'], inplace=True)
     if 'weight' in elist.columns:
         weights = elist[elist.columns[-1]].astype(np.float)
