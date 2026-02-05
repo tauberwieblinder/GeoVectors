@@ -1,5 +1,5 @@
 import argparse
-import util
+from .util import run_on_snapshots, read_from_snapshot, read_db_config
 import os.path
 import itertools
 from .AsyncWrite import AsyncWrite
@@ -24,7 +24,7 @@ def get_model(args):
     if args.model == 'fasttext':
         model = FastTextModel(args.modelPath)
     elif args.model == 'nle':
-        db = PostgresDB(util.read_db_config(args.db_cred))
+        db = PostgresDB(read_db_config(args.db_cred))
         model = NLEModel(args.modelPath, args.njobs, False, db)
         model.load_indexes()
     return model
@@ -36,7 +36,7 @@ def run_on_dump(args, input, output):
     writer = AsyncWrite(output, compressed=True, encoder=model)
     writer.start()
 
-    data = util.read_from_snapshot(input, writer=writer, max_runs=2)
+    data = read_from_snapshot(input, writer=writer, max_runs=2)
 
     for record in itertools.chain.from_iterable(data):
         writer.add_line(record)
@@ -61,7 +61,7 @@ def run_dumps(args):
         output = os.path.join(args.output, fname)
         f_args[t] = (args, input, output)
 
-    util.run_on_snapshots(run_on_dump, f_args, targets, args.njobs)
+    run_on_snapshots(run_on_dump, f_args, targets, args.njobs)
 
 
 def run():

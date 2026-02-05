@@ -1,5 +1,5 @@
 import argparse
-from util import read_samples, read_db_config
+from .util import read_samples, read_db_config
 
 from .PostgresDB import PostgresDB
 from .FasttextModel import FastTextModel
