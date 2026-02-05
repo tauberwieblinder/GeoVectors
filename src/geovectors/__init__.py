@@ -1,1 +1,1 @@
-from Encoder import run_dumps
+from .Encoder import run_dumps
