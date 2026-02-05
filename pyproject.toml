@@ -18,3 +18,9 @@ dependencies = [
     'scipy',
     'psycopg2-binary'
 ]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
