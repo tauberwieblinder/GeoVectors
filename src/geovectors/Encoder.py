@@ -2,10 +2,10 @@ import argparse
 import util
 import os.path
 import itertools
-from AsyncWrite import AsyncWrite
-from PostgresDB import PostgresDB
-from FasttextModel import FastTextModel
-from NLEModel import NLEModel
+from .AsyncWrite import AsyncWrite
+from .PostgresDB import PostgresDB
+from .FasttextModel import FastTextModel
+from .NLEModel import NLEModel
 from os import listdir, makedirs
 
 """

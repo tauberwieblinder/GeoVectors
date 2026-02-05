@@ -1,9 +1,9 @@
 import argparse
 from util import read_samples, read_db_config
-from PostgresDB import PostgresDB
 
-from FasttextModel import FastTextModel
-from NLEModel import NLEModel
+from .PostgresDB import PostgresDB
+from .FasttextModel import FastTextModel
+from .NLEModel import NLEModel
 
 """
 This is script can be used to train an embedding model on a sample from OpenStreetMap.
