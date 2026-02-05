@@ -9,8 +9,8 @@ from os.path import join, abspath, exists
 from os import makedirs
 from math import isnan
 from nodevectors import Node2Vec
-from WeightedDeepWalkGraph import _edgelist_to_wdw_graph
-from BaseModel import BaseModel
+from .WeightedDeepWalkGraph import _edgelist_to_wdw_graph
+from .BaseModel import BaseModel
 from tqdm import tqdm
 from haversine import haversine
 

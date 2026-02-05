@@ -2,7 +2,7 @@ import fasttext
 import fasttext.util
 import ast
 import numpy as np
-from BaseModel import BaseModel
+from .BaseModel import BaseModel
 
 """
 This is class represents the Fasttext embedding model for OpenStreetMap tags.

@@ -1,5 +1,5 @@
 from tqdm import tqdm
-from AsyncWrite import AsyncWrite
+from .AsyncWrite import AsyncWrite
 from time import sleep
 import numpy as np
 
