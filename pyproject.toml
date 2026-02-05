@@ -1,6 +1,6 @@
 [project]
 name = "geovectorsfork"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 requires-python = ">=3.8"
 dependencies = [
@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"" = "geovectors"}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["geovectors"]
